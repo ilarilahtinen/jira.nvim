@@ -11,10 +11,10 @@ local config = {
 
 ---@param issue_id string
 local function get_issue(issue_id)
-	local response = curl.get("https://" .. config.domain .. "/rest/api/3/issue/" .. issue_id, {
+	local response = curl.get("https://" .. config.domain .. "/rest/api/2/issue/" .. issue_id, {
 		headers = {
 			["Content-Type"] = "application/json",
-			["Authorization"] = "Basic " .. Utils.b64encode(config.user .. ":" .. config.token),
+			["Authorization"] = "Bearer "  .. config.token,
 		},
 	})
 	if response.status < 400 then
