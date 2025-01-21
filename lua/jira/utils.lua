@@ -261,9 +261,9 @@ function Utils.adf_to_markdown(adt)
 		return node_md
 	end
 
-	for _, v in ipairs(adt.content) do
-		md = md .. adf_node_to_markdown(v)
-	end
+	--for _, v in ipairs(adt.content) do
+	md = md .. adf_node_to_markdown(v)
+	--end
 	return md
 end
 
