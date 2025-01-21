@@ -61,9 +61,10 @@ function Jira.view_issue()
 			"---",
 			"`" .. issue.fields.status.name .. "`" .. assignee,
 			"",
-			vim.split(issue.fields.description, "\r\n"),
+			
 			-- Utils.adf_to_markdown(issue.fields.description),
 		}
+		vim.list_extend(content, vim.split(issue.fields.description, "\r\n"))
 		vim.lsp.util.open_floating_preview(content, "markdown", { border = "rounded" })
 	end)
 end
