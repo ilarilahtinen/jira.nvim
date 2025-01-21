@@ -64,7 +64,7 @@ function Jira.view_issue()
 			
 			-- Utils.adf_to_markdown(issue.fields.description),
 		}
-		vim.list_extend(content, vim.split(issue.fields.description, "\r\n"))
+		--vim.list_extend(content, vim.split(issue.fields.description, "\r\n"))
 		print(content)
 		vim.lsp.util.open_floating_preview(content, "markdown", { border = "rounded" })
 	end)
